@@ -72,25 +72,26 @@ class PunchCard {
                   popup_c.fillStyle = 'rgba( 227, 242, 253, 0.6 )';
                   popup_c.fillRect(0, circle_data[i].y-(padding_y/2), x+max_radius, padding_y);
                   popup_c.fillStyle = 'rgba( 96, 125, 139, 0.8 )';
-                  popup_c.arc( circle_data[i].x, circle_data[i].y, max_radius-5, 0, 2 * Math.PI, false );
+                  popup_c.arc( circle_data[i].x, circle_data[i].y, 16, 0, 2 * Math.PI, false );
                   popup_c.fill();
                   popup_c.font = "9px verdana, 'sans-serif'";
                   popup_c.fillStyle = 'rgb(255, 255, 255)';
                   switch (circle_data[i].text.toString().length) {
                     case 1:
-                        popup_c.fillText(circle_data[i].text, circle_data[i].x-(max_radius/6), circle_data[i].y+3);
+                        popup_c.fillText(circle_data[i].text, circle_data[i].x-3, circle_data[i].y+3);
                       break;
                     case 2:
-                        popup_c.fillText(circle_data[i].text, circle_data[i].x-(max_radius/3.5), circle_data[i].y+3);
+                        popup_c.fillText(circle_data[i].text, circle_data[i].x-6, circle_data[i].y+3);
                       break;
                     case 3:
-                        popup_c.fillText(circle_data[i].text, circle_data[i].x-(max_radius/2), circle_data[i].y+3);
+                        popup_c.fillText(circle_data[i].text, circle_data[i].x-9, circle_data[i].y+3);
                       break;
                     case 4:
-                        popup_c.fillText(circle_data[i].text, circle_data[i].x-(max_radius/1.5), circle_data[i].y+3);
+                        popup_c.fillText(circle_data[i].text, circle_data[i].x-12, circle_data[i].y+3);
                       break;
                     default:
-                      popup_c.fillText(circle_data[i].text, circle_data[i].x-(max_radius/1.3), circle_data[i].y+3);
+                      popup_c.font = "8px verdana, 'sans-serif'";
+                      popup_c.fillText(circle_data[i].text, circle_data[i].x-12, circle_data[i].y+3);
 
                   }
 
