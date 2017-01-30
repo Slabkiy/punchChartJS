@@ -1,3 +1,11 @@
+/**
+ * Author: Slabkiy Andrey
+ *
+ */
+
+
+
+
 window.addEventListener('resize', () => {
     if( document.getElementById('c_pc') !== undefined ){
         document.getElementById('c_pc').remove()
@@ -18,7 +26,7 @@ class PunchCard {
         var circle_position = [];
 
         /*Создаем канвасы*/
-        
+
         var punch_card = document.getElementById(this.where);
         var canv_punch  = document.createElement('canvas');
         canv_punch.width = punch_card.clientWidth;
@@ -38,7 +46,7 @@ class PunchCard {
         var x = (canv_punch.width-30);
         var y = (canv_punch.height-10);
         /*Задаем значение x и y*/
-        var padding_start_x = 100; 
+        var padding_start_x = 100;
         var padding_y = (y/Object.keys(result_array).length);
         var padding_x = (x-padding_start_x)/result_array[1].length;
         if( padding_y < padding_x ){
@@ -46,11 +54,11 @@ class PunchCard {
         }else{
             var max_radius = parseInt((padding_x-8)/2);
         }
-        
+
         var min_radius = 2;
         var chart = canv_punch.getContext('2d');
         var popup_c = canv_popup.getContext('2d');
-        var label = [ 'Понедельник', "Вторник", "Среда" ,"Четверг", "Пятница", "Суббота", 'Воскресенье']; 
+        var label = [ 'Понедельник', "Вторник", "Среда" ,"Четверг", "Пятница", "Суббота", 'Воскресенье'];
         draw_punch_card();
         punch_card.onmousemove = function(e){
 
@@ -66,9 +74,9 @@ class PunchCard {
                   popup_c.fillStyle = 'rgb(44, 62, 80)';
                   popup_c.fillText(circle_position[i].text, circle_position[i].x-(max_radius/2), circle_position[i].y-( padding_y/3 ));
 
-              } 
+              }
 
-           } 
+           }
 
         }
 
@@ -105,7 +113,7 @@ class PunchCard {
                         chart.lineTo(x, padding_y*(i));
                         chart.strokeStyle = "rgba(108 , 122, 137)";
                         chart.stroke();
-                        chart.closePath();     
+                        chart.closePath();
 
                 });
 
@@ -118,7 +126,7 @@ class PunchCard {
 
                             chart.beginPath();
                             chart.arc( padding_start_x+padding_x*(j+1), padding_y*(i)-(padding_y/2), set_radius(result_array[i][j]), 0, 2*Math.PI, false);
-                            chart.fillStyle = "rgb(0," + Math.floor(255-35.5*i)+","+Math.floor(255-10.5*j)+")"; // сделать цвет в зависиости от количества действий 
+                            chart.fillStyle = "rgb(0," + Math.floor(255-35.5*i)+","+Math.floor(255-10.5*j)+")"; // сделать цвет в зависиости от количества действий
                             chart.strokeStyle = "rgb(0," + Math.floor(255-35.5*i)+","+Math.floor(255-10.5*j)+")"; //
                             chart.fill();
                             chart.stroke();
@@ -128,7 +136,7 @@ class PunchCard {
                                 'text': result_array[i][j]
                             }
                             circle_position.push(obj);
-                        }              
+                        }
                     }
 
                  });
@@ -157,4 +165,3 @@ class PunchCard {
         }
     }
 }
-
