@@ -2,6 +2,8 @@
 
 ## What is it?
 
+![](https://slabkiy.github.io/assets/images/punshCard.png)
+
 punchCardJS is a simple js graph that displays the number of actions in a certain hour of a certain day.
 
 ## Default settings
@@ -30,5 +32,5 @@ data object:
                 }`
                 
                 
-![](https://slabkiy.github.io/assets/images/punshCard.png)
+
                 
